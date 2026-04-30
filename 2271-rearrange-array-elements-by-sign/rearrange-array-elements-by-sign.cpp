@@ -20,13 +20,13 @@ public:
             }
         }
         j=0;
+      
         for(int i=0;i<n;i++){
             if(i%2!=0){
                 nums[i]=nums3[j];
                 j++;
             }
         }
-
         return nums;
     }
 };
