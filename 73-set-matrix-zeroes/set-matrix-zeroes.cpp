@@ -15,19 +15,16 @@ public:
             }
         }
 
-        for(int i=0;i<row_num;i++){
-            if(rows.find(i)!=rows.end())
-                for(int j=0;j<col_num;j++){
-                    matrix[i][j]=0;
-                }
-        }
-        for(int j=0;j<col_num;j++){
-            if(cols.find(j)!=cols.end()){
-                for(int i=0;i<row_num;i++){
-                    matrix[i][j]=0;
-                }
+        for(auto itr: rows){
+            for(int j=0;j<col_num;j++){
+                matrix[itr][j]=0;
             }
         }
-        
+
+        for(auto itr: cols){
+            for(int i=0;i<row_num;i++){
+                matrix[i][itr]=0;
+            }
+        }
     }
 };
