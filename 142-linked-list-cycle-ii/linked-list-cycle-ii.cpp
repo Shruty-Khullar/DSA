@@ -25,19 +25,18 @@ public:
         if(head==nullptr)
             return nullptr;
         ListNode* slow = head;
-        ListNode* fast = head->next;
+        ListNode* fast = head;
         while(slow && fast && fast->next){
+            slow = slow->next;
+            fast = fast->next->next;
             if(fast==slow){
                 slow = head;
-                fast = fast->next;
                 while(slow!=fast){
                     slow = slow->next;
                     fast = fast->next;
                 }
                 return slow;
             } 
-            slow = slow->next;
-            fast = fast->next->next;
         }
         return nullptr;
     }
