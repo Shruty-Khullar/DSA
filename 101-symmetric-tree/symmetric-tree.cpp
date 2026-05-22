@@ -22,7 +22,9 @@ public:
         if(!leftAns)
             return false;
         bool rightAns = Helper(node1->right, node2->left);
-        return leftAns && rightAns;
+        if(!rightAns)
+            return false;
+        return true;
     }
     bool isSymmetric(TreeNode* root) {
         return Helper(root->left, root->right);
