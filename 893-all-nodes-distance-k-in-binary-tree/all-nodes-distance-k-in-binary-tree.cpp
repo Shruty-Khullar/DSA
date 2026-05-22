@@ -27,7 +27,6 @@ public:
         queue<pair<TreeNode*, int>> q;
         q.push({target,0});
         visited.insert(target);
-        int dist=0;
         vector<int> temp;
         while(!q.empty()){
             int len = q.size();
