@@ -12,17 +12,13 @@ public:
         if(head==nullptr)
             return false;
        ListNode* slow = head;
-       ListNode* fast = head->next;
-       if(fast==nullptr)
-        return false;
+       ListNode* fast = head;
+
        while(slow && fast && fast->next){
-            if(slow==fast){
+            slow = slow->next;
+            fast = fast->next->next;
+            if(slow==fast)
                 return true;
-            }
-            else {
-                slow = slow->next;
-                fast = fast->next->next;
-            }
        }
        return false;
     }
