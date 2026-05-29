@@ -26,16 +26,17 @@ public:
         int maj_ele = nums[0];
         int count=1;
         for(int i=1;i<nums.size();i++){
-            if(nums[i]==maj_ele){
+            if(count==0){
+                maj_ele = nums[i];
+                count=1;
+            }
+            else if(nums[i]==maj_ele){
                 count++;
             } else {
                 count--;
             }
 
-            if(count==0){
-                maj_ele = nums[i];
-                count=1;
-            }
+            
         }
         return maj_ele;
     }
